@@ -115,6 +115,7 @@
 (require 'init-lisp)
 (require 'init-slime)
 (require 'init-clojure)
+(require 'init-go)
 (require 'init-clojure-cider)
 (require 'init-common-lisp)
 
@@ -159,6 +160,10 @@
 (when (file-exists-p custom-file)
   (load custom-file))
 
+;;----------------------------------------------------------------------------
+;; Key Bindings - set them near the end so they overwrite mosst things
+;;----------------------------------------------------------------------------
+(require 'init-keybindings)
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
