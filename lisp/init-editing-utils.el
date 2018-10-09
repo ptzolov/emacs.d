@@ -287,8 +287,6 @@ With arg N, insert N newlines."
     (end-of-line)
     (indent-according-to-mode)))
 
-(global-set-key (kbd "C-o") 'sanityinc/open-line-with-reindent)
-
 
 ;;----------------------------------------------------------------------------
 ;; Random line sorting
@@ -318,5 +316,14 @@ With arg N, insert N newlines."
 (after-load 'guide-key
   (diminish 'guide-key-mode))
 
+(defun back-to-indentation-or-beginning () (interactive)
+       (if (= (point) (progn (back-to-indentation) (point)))
+           (beginning-of-line)))
+
+(global-set-key (kbd "C-a") 'back-to-indentation-or-beginning)
+
+(use-package undo-tree :ensure t
+  :config (progn (global-undo-tree-mode))
+  :diminish ((undo-tree-mode . "")))
 
 (provide 'init-editing-utils)

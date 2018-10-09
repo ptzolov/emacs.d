@@ -40,6 +40,14 @@
 ;;----------------------------------------------------------------------------
 (require 'init-preload-local nil t)
 
+
+;; Bootstrap 'use-package'
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
 ;;----------------------------------------------------------------------------
@@ -87,37 +95,37 @@
 (require 'init-textile)
 (require 'init-markdown)
 (require 'init-csv)
-(require 'init-erlang)
-(require 'init-javascript)
-(require 'init-php)
+;; (require 'init-erlang)
+;; (require 'init-javascript)
+;; (require 'init-php)
 (require 'init-org)
-(require 'init-nxml)
-(require 'init-html)
-(require 'init-css)
-(require 'init-haml)
+;; (require 'init-nxml)
+;; (require 'init-html)
+;; (require 'init-css)
+;; (require 'init-haml)
 (require 'init-http)
-(require 'init-python)
-(require 'init-haskell)
-(require 'init-elm)
-(require 'init-purescript)
-(require 'init-ruby)
-(require 'init-rails)
-(require 'init-sql)
-(require 'init-rust)
-(require 'init-toml)
+;; (require 'init-python)
+;; (require 'init-haskell)
+;; (require 'init-elm)
+;; (require 'init-purescript)
+;; (require 'init-ruby)
+;; (require 'init-rails)
+;; (require 'init-sql)
+;; (require 'init-rust)
+;; (require 'init-toml)
 (require 'init-yaml)
 (require 'init-docker)
-(require 'init-terraform)
+;; (require 'init-terraform)
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
 (require 'init-paredit)
 (require 'init-lisp)
 (require 'init-slime)
-(require 'init-clojure)
+;; (require 'init-clojure)
 (require 'init-go)
-(require 'init-clojure-cider)
-(require 'init-common-lisp)
+;; (require 'init-clojure-cider)
+;; (require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
@@ -130,6 +138,9 @@
 ;;(require 'init-twitter)
 ;; (require 'init-mu)
 (require 'init-ledger)
+
+(require 'init-ido)
+(require 'init-ace-jump)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)

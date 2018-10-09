@@ -19,4 +19,8 @@
 (global-set-key (kbd "S-<up>") 'windmove-up)
 (global-set-key (kbd "S-<down>") 'windmove-down)
 
+;; commenting
+
+(global-set-key (kbd "C-;") 'comment-dwim)
+
 (provide 'init-keybindings)

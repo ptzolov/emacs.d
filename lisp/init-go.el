@@ -6,15 +6,16 @@
 
 (when (maybe-require-package 'go-mode)
   (require-package 'go-eldoc)
-  (require-package 'go-autocomplete)
+  ;; company-go is the atocomplete backend
+  (require-package 'company-go)
 
   (after-load 'go-mode
-
     (add-hook 'go-mode-hook
               (lambda ()
                 (go-eldoc-setup)
                 (local-set-key (kbd "M-.") 'godef-jump)
-                (add-hook 'before-save-hook 'gofmt-before-save)))))
-
+                (add-hook 'before-save-hook 'gofmt-before-save)
+                (sanityinc/local-push-company-backend 'company-go)))))
 
 (provide 'init-go)
+;;; init-go.el ends here
