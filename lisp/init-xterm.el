@@ -9,7 +9,11 @@
   (xterm-mouse-mode 1) ; Mouse in a terminal (Use shift to paste with middle button)
   (mwheel-install))
 
-
+(after-load 'term-mode
+  (add-hook 'term-mode-hook
+            (lambda ()
+              (term-line-mode)
+              (define-key term-mode-map (kbd "M-k") 'erase-buffer))))
 
 (add-hook 'after-make-console-frame-hooks 'sanityinc/console-frame-setup)
 

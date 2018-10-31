@@ -20,7 +20,7 @@
 
   (defun sanityinc/local-push-company-backend (backend)
     "Add BACKEND to a buffer-local version of `company-backends'."
-    (make-local-variable 'company-backends)
+    (setq company-backends '())
     (push backend company-backends)))
 
 ;; Suspend page-break-lines-mode while company menu is active

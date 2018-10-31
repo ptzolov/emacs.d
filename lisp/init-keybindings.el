@@ -2,8 +2,7 @@
 (global-set-key (kbd "C-x r q") 'save-buffers-kill-terminal)
 (defun kill-buffer-and-frame ()
   (interactive)
-  (kill-buffer)
-  (delete-frame))
+  (kill-buffer))
 (global-set-key (kbd "C-x C-c") 'kill-buffer-and-frame)
 
 
@@ -20,7 +19,9 @@
 (global-set-key (kbd "S-<down>") 'windmove-down)
 
 ;; commenting
-
 (global-set-key (kbd "C-;") 'comment-dwim)
+
+;; search
+(global-set-key (kbd "M-S") 'ag-project)
 
 (provide 'init-keybindings)

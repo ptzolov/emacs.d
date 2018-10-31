@@ -78,9 +78,7 @@
 (global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
 
 
-
-(after-load 'subword
-  (diminish 'subword-mode))
+(subword-mode 1)
 
 
 

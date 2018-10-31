@@ -72,7 +72,7 @@
 (require 'init-recentf)
 (require 'init-smex)
 (require 'init-ivy)
-;;(require 'init-helm)
+;; (require 'init-helm)
 (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-windows)
@@ -119,9 +119,9 @@
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
-(require 'init-paredit)
-(require 'init-lisp)
-(require 'init-slime)
+;; (require 'init-paredit)
+;; (require 'init-lisp)
+;; (require 'init-slime)
 ;; (require 'init-clojure)
 (require 'init-go)
 ;; (require 'init-clojure-cider)
@@ -146,7 +146,7 @@
 (require-package 'gnuplot)
 (require-package 'lua-mode)
 (require-package 'htmlize)
-(require-package 'dsvn)
+
 (when *is-a-mac*
   (require-package 'osx-location))
 (unless (eq system-type 'windows-nt)
@@ -175,6 +175,7 @@
 ;; Key Bindings - set them near the end so they overwrite mosst things
 ;;----------------------------------------------------------------------------
 (require 'init-keybindings)
+(require 'init-custom)
 
 ;;----------------------------------------------------------------------------
 ;; Locales (setting them earlier in this file doesn't work in X)
@@ -195,3 +196,4 @@
 ;; coding: utf-8
 ;; no-byte-compile: t
 ;; End:
+(put 'erase-buffer 'disabled nil)
