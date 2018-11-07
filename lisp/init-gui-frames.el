@@ -42,7 +42,10 @@
 
 (let ((no-border '(internal-border-width . 0)))
   (add-to-list 'default-frame-alist no-border)
-  (add-to-list 'initial-frame-alist no-border))
+  (add-to-list 'initial-frame-alist no-border)
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+  (add-to-list 'initial-frame-alist '(ns-appearance . dark)))
+
 
 (defun sanityinc/adjust-opacity (frame incr)
   "Adjust the background opacity of FRAME by increment INCR."
@@ -55,6 +58,7 @@
          (newalpha (+ incr oldalpha)))
     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
+
 
 (when (and *is-a-mac* (fboundp 'toggle-frame-fullscreen))
   ;; Command-Option-f to toggle fullscreen mode
@@ -72,13 +76,14 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
 (add-hook 'term-mode-hook
           (lambda ()
             (setq line-spacing 0)))
 
-
+
 (require-package 'disable-mouse)
 
 

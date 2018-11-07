@@ -7,4 +7,5 @@
 
 (global-set-key (kbd "C-c C-l") 'quick-nav)
 
+
 (provide 'init-custom)
