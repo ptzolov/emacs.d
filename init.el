@@ -1,5 +1,5 @@
 ;; -*- lexical-binding: t -*-
-(setq debug-on-error t)
+(setq debug-on-error nil)
 
 ;;; This file bootstraps the configuration, which is divided into
 ;;; a number of other files.
@@ -119,13 +119,13 @@
 ;;(require 'init-nix)
 (maybe-require-package 'nginx-mode)
 
-;; (require 'init-paredit)
-;; (require 'init-lisp)
-;; (require 'init-slime)
-;; (require 'init-clojure)
+(require 'init-paredit)
+(require 'init-lisp)
+(require 'init-slime)
+(require 'init-clojure)
 (require 'init-go)
-;; (require 'init-clojure-cider)
-;; (require 'init-common-lisp)
+(require 'init-clojure-cider)
+(require 'init-common-lisp)
 
 (when *spell-check-support-enabled*
   (require 'init-spelling))
